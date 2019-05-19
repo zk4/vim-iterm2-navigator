@@ -1,6 +1,6 @@
-## Remindings. 
+
 THIS IS A FORK OF https://github.com/zephod/vim-iterm2-navigator
-some updates:
+## FYI 
 1. It worked for vim&nvim in the lastest iterm2(Build 3.3.0beta7.
 2. It only worked for Plug management.Because some hard coding path in 'vim-iterm2-navigator/plugin/iterm2_navigator.vim' source file. if u use other plugin Mangerment. change the below path, and it should work.
 ```
