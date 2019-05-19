@@ -3,7 +3,6 @@
 import sys
 import subprocess
 import os
-import pync
 
 
 def path_to(x):
