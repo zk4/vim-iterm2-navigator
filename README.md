@@ -2,7 +2,7 @@
 THIS IS A FORK OF https://github.com/zephod/vim-iterm2-navigator
 ## FYI 
 1. It worked for vim&nvim in the lastest iterm2(Build 3.3.0beta7.
-2. It only worked for vim-plug management.Because some hard coding path in 'vim-iterm2-navigator/plugin/iterm2_navigator.vim' source file. If  other plugin Mangerment other than vim-plug. Change the below path, and it should work.
+2. It only worked for vim-plug management.Because some hard coding path in 'vim-iterm2-navigator/plugin/iterm2_navigator.vim' source file. Change the below path, If other plugin management is your first choice. and it should work.
 ```
 let cmd = 'osascript ~/.vim/plugged/vim-iterm2-navigator/applescript/iterm2_l.scpt'
 
