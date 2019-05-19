@@ -12,7 +12,7 @@ function! SwitchWindow(key)
   if oldwindow==winnr()
       if a:key=='l'
         let cmd = 'osascript ~/.vim/plugged/vim-iterm2-navigator/applescript/iterm2_l.scpt'
-      elseif a:key=='k'
+  elseif a:key=='k'
         let cmd = 'osascript ~/.vim/plugged/vim-iterm2-navigator/applescript/iterm2_k.scpt'
       elseif a:key=='j'
         let cmd = 'osascript ~/.vim/plugged/vim-iterm2-navigator/applescript/iterm2_j.scpt'

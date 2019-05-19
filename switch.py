@@ -3,17 +3,15 @@
 import sys
 import subprocess
 import os
-
-
 def path_to(x):
     root = os.path.dirname(__file__)
     return os.path.join(root,'applescript',x)
 
 # Get direction key from args (h,j,k,l)
 key = sys.argv[1]
-# Query iTerm2 for the name of the active session
+# Query miTerm2 for the name of the active session
 name = subprocess.check_output(['osascript',path_to('iterm2_getname.scpt')])
-if b'(vim)' in name:
+if b"(vim)" in name or b"(nvim)" in name:
     # Send keystrokes directly to the vim plugin
     sys.stdout.write(chr(27))
     sys.stdout.write(':call SwitchWindow("%s")'%key)

@@ -1,3 +1,20 @@
+## Remindings. 
+THIS IS A FORK OF https://github.com/zephod/vim-iterm2-navigator
+some updates:
+1. It worked for vim&nvim in the lastest iterm2(Build 3.3.0beta7.
+2. It only worked for Plug management.Because some hard coding path in 'vim-iterm2-navigator/plugin/iterm2_navigator.vim' source file. if u use other plugin Mangerment. change the below path, and it should work.
+```
+let cmd = 'osascript ~/.vim/plugged/vim-iterm2-navigator/applescript/iterm2_l.scpt'
+
+```
+
+3. DON NOT  MAP ctrl-h/j/k/l , these keys colide with shell hotkey in iterm2. MAP CMD-h/j/k/l may be a good idea.
+
+
+
+
+
+
 ## Vim+iterm2 Seamless Navigation Plugin
 
 Use Cmd+j, Cmd+k, Cmd+l, Cmd+h to seamlessly navigate between your split Vim panes and split iTerm2 panes while editing.
@@ -8,30 +25,14 @@ This plugin is for developers using cli-mode Vim (not MacVim) inside an iTerm2 w
 
 #### To Install:
 
-Add this repo to your bundles.
+Add this repo to your .vimrc.
+```
+Plug 'zk4/vim-iterm2-navigator'
+```
 
-    cd ~/.vim/bundle
-    git clone git://github.com/zephod/vim-iterm2/navigator
+Now configure iTerm2's keyboard shortcuts. **Cmd-J** should be set to **run coprocess**. This coprocess is `~/.vim/plugged/vim-iterm2-navigator/switch.py j`. Note the argument passed to the script.  Screenshot of settings:
 
-Now configure iTerm2's keyboard shortcuts. **Cmd-J** should be set to **run coprocess**. This coprocess is `~/.vim/bundle/vim-iterm2-navigator/switch.py j`. Note the argument passed to the script.  Screenshot of settings:
-
-![iterm2 config keys](iterm2_options.png)
+![iterm2 config keys](mappings.jpg)
 
 ---
-
-Developer Note: This is how I created the applescript/\* files:
-
-    osacompile -o iterm2_l.scpt -e "tell application \"System Events\" to key code 124 using {command down, option down}"
-    osacompile -o iterm2_h.scpt  -e "tell application \"System Events\" to key code 123 using {command down, option down}"
-    osacompile -o iterm2_k.scpt    -e "tell application \"System Events\" to key code 126 using {command down, option down}"
-    osacompile -o iterm2_j.scpt  -e "tell application \"System Events\" to key code 125 using {command down, option down}"
-    osacompile -o iterm2_getname.scpt -e "
-      tell application \"iTerm\"
-        activate
-        tell the current terminal
-          tell the current session
-            get name 
-          end tell
-        end tell
-      end tell"
 
